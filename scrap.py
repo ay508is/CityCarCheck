@@ -55,7 +55,7 @@ async def process_document_page(page, link: str, page_number: int = 0):
         tree = HTMLParser(html_docs)
         rows = tree.css("tr[onclick]")
 
-        i=1
+        
 
         if not rows:
             print("!!!No documents on this page!!!")
@@ -75,7 +75,7 @@ async def process_document_page(page, link: str, page_number: int = 0):
             await process_single_document(page, doc_url, i)
 
     except Exception as e:
-        print(f"    !!!!Error opening document page {link}: {e}")
+        print(f"!!!!Error opening document page {link}: {e}")
 
 
 
@@ -171,3 +171,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
